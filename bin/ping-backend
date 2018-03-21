@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+require 'net/http'
+
+uri = URI('https://habit-socks-backend.herokuapp.com/')
+Net::HTTP.get_response(uri)
+puts 'done'
