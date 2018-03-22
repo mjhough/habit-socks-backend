@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "start": "DEBUG=express:* node index.js" 
   },
   "dependencies": {
     "body-parser": "^1.18.2",

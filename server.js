@@ -11,6 +11,7 @@ const corsOptions = {
 };
 
 const configureServer = app => {
+  console.log(corsOptions);
   app.use(cors(corsOptions));
 
   app.use(bodyParser.json());
