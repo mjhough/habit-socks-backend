@@ -11,10 +11,8 @@ const corsOptions = {
 };
 
 const configureServer = app => {
-  console.log(corsOptions.origin);
-  console.log(CORS_WHITELIST.indexOf('https://www.habitsocks.com') !== -1);
   app.use(cors(corsOptions));
-
+  app.options('/', cors());
   app.use(bodyParser.json());
 };
 
