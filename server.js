@@ -4,13 +4,13 @@ const bodyParser = require('body-parser');
 const CORS_WHITELIST = require('./constants/frontend');
 
 const corsOptions = {
-  origin: CORS_WHITELIST,
-  method: ['POST']
+  origin: true,
+  methods: ['POST']
 };
 
 const configureServer = app => {
   console.log(CORS_WHITELIST);
-  app.options('/', cors(corsOptions));
+  app.use(cors(corsOptions));
   app.use(bodyParser.json());
 };
 
