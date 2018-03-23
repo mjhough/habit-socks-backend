@@ -4,15 +4,12 @@ const bodyParser = require('body-parser');
 const CORS_WHITELIST = require('./constants/frontend');
 
 const corsOptions = {
-  origin: (origin, callback) =>
-    (CORS_WHITELIST.indexOf(origin) !== -1)
-      ? callback(null, true)
-      : callback(new Error('Not allowed by CORS'))
+  origin: CORS_WHITELIST
 };
 
 const configureServer = app => {
+  console.log(CORS_WHITELIST);
   app.use(cors(corsOptions));
-  app.options('/', cors());
   app.use(bodyParser.json());
 };
 
