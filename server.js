@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const CORS_WHITELIST = require('./constants/frontend');
 
 const corsOptions = {
-  origin: CORS_WHITELIST
+  origin: CORS_WHITELIST,
+  method: ['POST']
 };
 
 const configureServer = app => {
