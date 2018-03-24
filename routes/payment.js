@@ -14,6 +14,7 @@ const paymentApi = app => {
   });
 
   app.post('/', (req, res) => {
+    console.log(req.body);
     stripe.orders.create(req.body.order, (err, order) =>
       stripe.orders.pay(order.id, req.body.pay, (err, order) => postStripeCharge(res, err, order)));
   });

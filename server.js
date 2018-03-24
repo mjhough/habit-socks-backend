@@ -11,7 +11,7 @@ const corsOptions = {
 const configureServer = app => {
   console.log(CORS_WHITELIST);
   app.use(cors(corsOptions));
-  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded());
 };
 
 module.exports = configureServer;
